@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horóscopo Diario</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Horóscopo Diario</h1>
+    </header>
+    <main>
+        <form id="horoscope-form">
+            <label for="sign">Selecciona tu signo:</label>
+            <select id="sign" name="sign">
+                <option value="aries">Aries</option>
+                <option value="taurus">Tauro</option>
+                <option value="geminis">Geminis</option>
+                <option value="cancer">Cancer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="escorpio">Escorpio</option>
+                <option value="sagitario">Sagitario</option>
+                <option value="capricornio">Capricornio</option>
+                <option value="acuario">Acuario</option>
+                <option value="piscis">Piscis</option>
+            </select>
+            <button type="submit">Obtener Horóscopo</button>
+        </form>
+        <section id="horoscope-result">
+            <!-- Resultado del horóscopo -->
+        </section>
+    </main>
+</body>
+</html>
