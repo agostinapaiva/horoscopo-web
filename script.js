@@ -1,28 +1,20 @@
-document.getElementById("horoscope-form").addEventListener("submit", async function(event) {
-        event.preventDefault(); 
-        
-        const sign = document.getElementById("sign").value;
+const form = document.getElementById ('horoscopo-form');
 
-        try {
-            const response = await fetch("https://aztro.sameerkumar.website/?sign=" + sign + "&day=today", {
-                method: "POST"
-            });
+form.addEventListener('submit', () => {
+    event.preventDefault();
+    fetch('https://dog.ceo/api/breeds/image/random')
+        .then(response => {
+            return response.json(); 
+        })
+        .then(data => {
+            mostrarPerro(data.message);  
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+        });
+});
 
-            if (!response.ok) {
-                throw new Error("Error en la solicitud");
-            }
-
-          const data = await response.json();
-
-            document.getElementById("horoscope-result").innerHTML = `
-                <h2>Horóscopo para ${sign}</h2>
-                <p><strong>Descripción:</strong> ${data.description}</p>
-                <p><strong>Compatibilidad:</strong> ${data.compatibility}</p>
-                <p><strong>Estado de ánimo:</strong> ${data.mood}</p>
-                <p><strong>Color:</strong> ${data.color}</p>
-            `;
-        } catch (error) {
-            console.error("Error:", error);
-            document.getElementById("horoscope-result").innerHTML = "<p>Hubo un error al obtener el horóscopo.</p>";
-        }
-    });
+function mostrarPerro(url) {  
+    const seccionImagen = document.getElementById("image-section");
+    seccionImagen.innerHTML = `<img src="${url}">`;
+}

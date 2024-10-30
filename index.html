@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horóscopo Diario</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <header>
-        <h1>Horóscopo Diario</h1>
-    </header>
-    <main>
-        <form id="horoscope-form">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Horoscopo del día</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h1>¿Qué perro sos según tu signo?</h1>
+        <form id="horoscopo-form">
             <label for="sign">Selecciona tu signo:</label>
-            <select id="sign" name="sign">
+            <select name="sign" id="sign">
                 <option value="aries">Aries</option>
                 <option value="taurus">Tauro</option>
                 <option value="geminis">Geminis</option>
@@ -28,11 +25,10 @@
                 <option value="acuario">Acuario</option>
                 <option value="piscis">Piscis</option>
             </select>
-            <button type="submit">Obtener Horóscopo</button>
+            <button type="submit" id="button">Aceptar</button>
         </form>
-        <section id="horoscope-result">
-            <!-- Resultado del horóscopo -->
-        </section>
-    </main>
-</body>
+        <div id="image-section">
+
+        </div>
+    </body>
 </html>
